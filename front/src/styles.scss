@@ -1,0 +1,12 @@
+@use '~@angular/material' as mat;
+body, html, lp-root {
+  height: 100%;
+  margin: 0;
+}
+
+
+lp-root{
+  display: flex;
+  flex-flow: column;
+  background-color: mat.get-color-from-palette(mat.$yellow-palette, 50);
+}
