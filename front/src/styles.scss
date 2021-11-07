@@ -1,12 +1,25 @@
 @use '~@angular/material' as mat;
+@use 'sass:map';
+@use 'lp-theming' as theme;
+
+// Angular Material
+@import 'lp-theming';
+
+$background: map.get(theme.$lp-theme, background);
+
 body, html, lp-root {
   height: 100%;
   margin: 0;
 }
 
+// Wrap mat with `.mat` class without increasing the css specificity
+// Allows you to disable it on some routes
+:where(.mat) {
+  @include mat.all-component-themes($lp-theme);
+}
 
 lp-root{
   display: flex;
   flex-flow: column;
-  background-color: mat.get-color-from-palette(mat.$yellow-palette, 50);
+  background-color: mat.get-color-from-palette($background);
 }

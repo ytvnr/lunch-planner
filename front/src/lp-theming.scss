@@ -1,0 +1,14 @@
+@use 'node_modules/@angular/material' as mat;
+
+@use './lp-palettes' as lp;
+
+$lp-theme: mat.define-light-theme(
+    (
+      color: (
+        primary: lp.$lp-primary-palette,
+        accent: lp.$lp-accent-palette,
+        warn: lp.$lp-error-palette,
+      ),
+      background: lightgray
+    )
+);

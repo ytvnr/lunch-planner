@@ -1,10 +1,10 @@
 <mat-toolbar color="primary" *ngIf="!(isHandset$ | async)">
 
-  <a mat-flat-button color="primary" routerLink="/" aria-label="Example icon-button with heart icon">
+  <a mat-flat-button color="primary" routerLink="/" aria-label="Homepage">
     <mat-icon>lunch_dining</mat-icon>
     {{title}}
   </a>
-  <a mat-button *ngFor="let menuItem of menuItems" [routerLink]="menuItem.path" aria-label="Example icon-button with share icon">
+  <a mat-button *ngFor="let menuItem of menuItems" [routerLink]="menuItem.path" routerLinkActive="active-route" aria-label="Link to page">
     <mat-icon>{{menuItem.data?.icon}}</mat-icon>
     {{menuItem.data?.title}}
   </a>

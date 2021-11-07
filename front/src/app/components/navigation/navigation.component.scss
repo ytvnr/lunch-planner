@@ -1,3 +1,9 @@
+@use '~@angular/material' as mat;
+
+@use 'sass:map';
+@use '../../../lp-theming' as theme;
+@use '../../../lp-palettes' as palettes;
+
 .sidenav-container {
   height: 100%;
 }
@@ -14,4 +20,9 @@
   position: sticky;
   top: 0;
   z-index: 1;
+  background: mat.get-color-from-palette(palettes.$lp-primary-palette, medium);
+}
+
+.active-route {
+  background-color: mat.get-color-from-palette(palettes.$lp-primary-palette, dark);
 }
