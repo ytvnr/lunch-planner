@@ -1,3 +1,11 @@
-p {
-  color: red;
+.planning {
+  width: 100%;
+
+  &__table {
+    width: 100%;
+  }
+}
+
+.mat-column-timeslot {
+  border-right: 1px solid currentColor;
 }

@@ -15,6 +15,7 @@ import { PlanningComponent } from './components/planning/planning.component';
 import { RecipesComponent } from './components/recipes/recipes.component';
 import { ShoppingListComponent } from './components/shopping-list/shopping-list.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [AppComponent, NavigationComponent, PlanningComponent, RecipesComponent, ShoppingListComponent, PageNotFoundComponent],
@@ -28,6 +29,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
