@@ -4,6 +4,7 @@
 
 // Angular Material
 @import 'lp-theming';
+@include mat.all-component-themes($lp-theme);
 
 $background: map.get(theme.$lp-theme, background);
 
@@ -14,14 +15,18 @@ body, html, lp-root {
   margin: 0;
 }
 
-// Wrap mat with `.mat` class without increasing the css specificity
-// Allows you to disable it on some routes
-:where(.mat) {
-  @include mat.all-component-themes($lp-theme);
-}
 
 lp-root{
   display: flex;
   flex-flow: column;
-  background-color: mat.get-color-from-palette($background);
+  background-color: mat.get-color-from-palette($background, background);
+}
+
+/**
+ * Reset `box-sizing` for all elements
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
