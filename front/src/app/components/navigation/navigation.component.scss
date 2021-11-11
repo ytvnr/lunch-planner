@@ -4,6 +4,14 @@
 @use '../../../lp-theming' as theme;
 @use '../../../lp-palettes' as palettes;
 
+:host {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
 .sidenav-container {
   height: 100%;
 }

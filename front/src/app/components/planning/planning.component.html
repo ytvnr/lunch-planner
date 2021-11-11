@@ -1,54 +1,11 @@
 <div class="planning">
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 planning__table">
-    <!-- Timeslot Column -->
-    <ng-container matColumnDef="timeslot">
-      <th mat-header-cell *matHeaderCellDef> Timeslot </th>
-      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-    </ng-container>
-
-    <!-- Monday Column -->
-    <ng-container matColumnDef="monday">
-      <th mat-header-cell *matHeaderCellDef> Name </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-    </ng-container>
-
-    <!-- Tuesday Column -->
-    <ng-container matColumnDef="tuesday">
-      <th mat-header-cell *matHeaderCellDef> Monday </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-    </ng-container>
-
-    <!-- Wednesday Column -->
-    <ng-container matColumnDef="wednesday">
-      <th mat-header-cell *matHeaderCellDef> Tuesday </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-    </ng-container>
-
-    <!-- Thursday Column -->
-    <ng-container matColumnDef="thursday">
-      <th mat-header-cell *matHeaderCellDef> Wednesday </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-    </ng-container>
-
-    <!-- Friday Column -->
-    <ng-container matColumnDef="friday">
-      <th mat-header-cell *matHeaderCellDef> Thursday </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-    </ng-container>
-
-    <!-- Saturday Column -->
-    <ng-container matColumnDef="saturday">
-      <th mat-header-cell *matHeaderCellDef> Friday </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-    </ng-container>
-
-    <!-- Sunday Column -->
-    <ng-container matColumnDef="sunday">
-      <th mat-header-cell *matHeaderCellDef> Saturday </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
+<!--  Add a date / week selector here-->
+  <mat-tab-group class="planning__tabs" mat-align-tabs="center" dynamicHeight [selectedIndex]="selectedTabIndex">
+    <mat-tab *ngFor="let day of days" [label]="day">
+      <ng-template mat-tab-label>
+        {{ day }}
+      </ng-template>
+      <lp-day></lp-day>
+    </mat-tab>
+  </mat-tab-group>
 </div>

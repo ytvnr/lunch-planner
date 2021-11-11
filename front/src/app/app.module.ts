@@ -16,21 +16,28 @@ import { RecipesComponent } from './components/recipes/recipes.component';
 import { ShoppingListComponent } from './components/shopping-list/shopping-list.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { MatTableModule } from '@angular/material/table';
+import { MatTabsModule } from '@angular/material/tabs';
+import { DayComponent } from './components/day/day.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
-  declarations: [AppComponent, NavigationComponent, PlanningComponent, RecipesComponent, ShoppingListComponent, PageNotFoundComponent],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    LayoutModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,
-    MatTableModule,
-  ],
+  declarations: [AppComponent, NavigationComponent, PlanningComponent, RecipesComponent, ShoppingListComponent, PageNotFoundComponent, DayComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        LayoutModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatSidenavModule,
+        MatIconModule,
+        MatListModule,
+        MatTableModule,
+        MatTabsModule,
+        MatGridListModule,
+        MatCardModule,
+    ],
   providers: [],
   bootstrap: [AppComponent],
 })

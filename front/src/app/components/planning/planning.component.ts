@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatTabGroup } from '@angular/material/tabs';
+import { DateService } from '../../helpers/date.service';
 
 @Component({
   selector: 'lp-planning',
@@ -7,13 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlanningComponent implements OnInit {
 
-  displayedColumns: string[] = ['timeslot', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
-  dataSource = [];
+  private daysOfTheWeek: string[] = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
 
-  // https://material.angular.io/components/table/overview#2-define-the-column-templates
-  constructor() { }
+  selectedTabIndex: number = 0;
+  days: string[] = [];
+
+  constructor(private readonly dateService: DateService) { }
 
   ngOnInit(): void {
+    const todayDate = new Date();
+    this.selectedTabIndex = this.selectTodayIndex(todayDate);
+    this.days = this.dateService.computeDateOfTheDays(todayDate);
   }
 
+  private selectTodayIndex(todayDate: Date): number {
+    // - 1 because we start week on monday
+    return todayDate.getDay() - 1;
+  }
 }
